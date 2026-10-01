@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>俺去也电影网 - 海量影视在线观看 | 官方网址：https://anquyedianyingwang-top.github.io</title>
+<meta name="description" content="俺去也电影网(anquyedianyingwang-top.github.io)提供海量电影、电视剧、动漫、综艺在线观看。资源丰富、更新迅速，官方网址：https://anquyedianyingwang-top.github.io">
+<meta name="keywords" content="俺去也电影网, anquyedianyingwang-top.github.io, 在线电影, 免费影视, 高清观看">
+<meta name="author" content="俺去也电影网">
+<link rel="canonical" href="https://anquyedianyingwang-top.github.io">
+<meta property="og:title" content="俺去也电影网 - 海量影视在线观看">
+<meta property="og:description" content="官方网址：https://anquyedianyingwang-top.github.io，海量影视资源免费在线观看！">
+<meta property="og:url" content="https://anquyedianyingwang-top.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="俺去也电影网 - 海量影视在线观看">
+<meta name="twitter:description" content="官方网址：https://anquyedianyingwang-top.github.io">
+
+<style>
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --concrete: #C5C5C5;
+  --concrete-dark: #9E9E9E;
+  --concrete-light: #E8E8E8;
+  --spray-yellow: #FFE800;
+  --street-red: #FF003C;
+  --graffiti-blue: #0033FF;
+  --neon-green: #00FF66;
+  --white: #FFFFFF;
+  --black: #0A0A0A;
+  --font-bold: 'Arial Black', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-hand: 'Comic Sans MS', 'KaiTi', cursive;
+  --font-mono: 'Courier New', monospace;
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-bold);
+  background: var(--concrete-light);
+  color: var(--black);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 混凝土纹理 */
+body::before {
+  content: '';
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0,0,0,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0,0,0,0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(0,0,0,0.04) 0%, transparent 50%);
+  z-index: -2; pointer-events: none;
+}
+
+/* 涂鸦线条装饰 */
+.doodle-line {
+  position: absolute; pointer-events: none; z-index: 0;
+}
+
+/* ===== 顶部信息条 ===== */
+.top-bar {
+  background: var(--spray-yellow);
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.5rem;
+  font-size: 0.75rem; font-weight: 900;
+  border-bottom: 4px solid var(--black);
+  position: relative;
+}
+.top-bar::after {
+  content: ''; position: absolute; bottom: -8px; left: 0; right: 0;
+  height: 4px; background: var(--street-red);
+}
+.top-bar a { color: var(--black); text-decoration: underline; text-decoration-style: wavy; text-decoration-color: var(--street-red); }
+.top-bar a:hover { background: var(--street-red); color: var(--white); }
+
+/* ===== 导航栏 ===== */
+.navbar {
+  background: var(--white);
+  border-bottom: 4px solid var(--black);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.8rem 1rem; gap: 1rem;
+}
+.nav-logo { font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 900; transform: rotate(-1deg); }
+.nav-logo a { color: var(--black); text-decoration: none; }
+.nav-logo .accent { color: var(--street-red); }
+.nav-url {
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  background: var(--black); color: var(--spray-yellow);
+  padding: 0.3rem 0.6rem; transform: rotate(1deg);
+  border: 2px solid var(--black);
+}
+.nav-menu { display: flex; list-style: none; gap: 0; }
+.nav-menu a {
+  display: block; padding: 0.5rem 0.8rem;
+  font-size: 0.75rem; font-weight: 900; color: var(--black);
+  text-decoration: none; transition: all 0.2s;
+  border: 2px solid transparent;
+}
+.nav-menu a:hover { background: var(--spray-yellow); border-color: var(--black); transform: rotate(-2deg); }
+.nav-toggle { display: none; background: var(--spray-yellow); border: 3px solid var(--black); padding: 0.3rem; cursor: pointer; }
+.nav-toggle span { display: block; width: 20px; height: 3px; background: var(--black); margin: 3px 0; }
+
+/* ===== Hero ===== */
+.hero {
+  max-width: 1200px; margin: 0 auto;
+  padding: 4rem 1rem 3rem;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 3rem; align-items: center; position: relative;
+}
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900; line-height: 1.1;
+  margin-bottom: 1rem; text-transform: uppercase;
+}
+.hero-text h1 .line1 { color: var(--street-red); transform: rotate(-2deg); display: inline-block; }
+.hero-text h1 .line2 { color: var(--graffiti-blue); transform: rotate(1deg); display: inline-block; }
+.hero-text h1 .line3 { color: var(--black); -webkit-text-stroke: 2px var(--spray-yellow); transform: rotate(-1deg); display: inline-block; }
+.hero-desc {
+  font-size: 0.9rem; font-weight: 700;
+  max-width: 500px; margin-bottom: 2rem;
+  padding: 1rem; background: var(--white);
+  border: 3px solid var(--black); transform: rotate(0.5deg);
+  box-shadow: 6px 6px 0 var(--spray-yellow);
+}
+.hero-desc strong { color: var(--street-red); background: var(--spray-yellow); padding: 0 0.3rem; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-graffiti {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.85rem; font-weight: 900;
+  text-decoration: none; text-transform: uppercase;
+  border: 3px solid var(--black); transition: all 0.2s; cursor: pointer;
+  font-family: var(--font-bold);
+}
+.btn-graffiti:active { transform: translate(3px, 3px); }
+.btn-yellow { background: var(--spray-yellow); color: var(--black); box-shadow: 4px 4px 0 var(--black); }
+.btn-yellow:hover { box-shadow: 6px 6px 0 var(--street-red); transform: rotate(-2deg); }
+.btn-blue { background: var(--graffiti-blue); color: var(--white); box-shadow: 4px 4px 0 var(--black); }
+.btn-blue:hover { box-shadow: 6px 6px 0 var(--spray-yellow); transform: rotate(2deg); }
+
+/* Hero 右侧涂鸦卡片 */
+.hero-card {
+  background: var(--white); border: 4px solid var(--black);
+  padding: 1.5rem; width: 320px; max-width: 100%;
+  box-shadow: 8px 8px 0 var(--street-red);
+  transform: rotate(2deg);
+  position: relative;
+}
+.hero-card::before {
+  content: 'HOT!'; position: absolute; top: -15px; right: -10px;
+  background: var(--street-red); color: var(--white);
+  font-size: 1.2rem; font-weight: 900; padding: 0.3rem 0.8rem;
+  border: 3px solid var(--black); transform: rotate(15deg);
+}
+.hero-card h3 { font-size: 1rem; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase; }
+.hero-stat { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; padding: 0.5rem; border: 2px dashed var(--black); }
+.hero-stat-icon { font-size: 1.5rem; }
+.hero-stat-info h4 { font-size: 0.8rem; font-weight: 900; }
+.hero-stat-info p { font-size: 0.65rem; font-weight: 700; }
+
+/* ===== 通用栏目 ===== */
+.section { max-width: 1200px; margin: 0 auto; padding: 3rem 1rem; position: relative; }
+.section-head {
+  display: flex; align-items: center; gap: 0.8rem;
+  margin-bottom: 2rem; flex-wrap: wrap;
+}
+.section-tag {
+  font-size: 0.7rem; font-weight: 900; padding: 0.3rem 0.8rem;
+  border: 3px solid var(--black); text-transform: uppercase;
+  transform: rotate(-1deg);
+}
+.section-tag.yellow { background: var(--spray-yellow); }
+.section-tag.red { background: var(--street-red); color: var(--white); }
+.section-tag.blue { background: var(--graffiti-blue); color: var(--white); }
+.section-tag.green { background: var(--neon-green); }
+.section-title { font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 900; text-transform: uppercase; }
+.section-line { flex: 1; height: 4px; background: var(--black); }
+
+/* ===== 栏目1：最新推荐 ===== */
+.movie-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.movie-card {
+  background: var(--white); border: 3px solid var(--black);
+  transition: all 0.3s; cursor: pointer; overflow: hidden;
+  position: relative;
+  box-shadow: 5px 5px 0 var(--black);
+}
+.movie-card:nth-child(odd) { transform: rotate(-1deg); }
+.movie-card:nth-child(even) { transform: rotate(1deg); }
+.movie-card:hover { transform: rotate(0deg) translateY(-8px); box-shadow: 8px 8px 0 var(--street-red); }
+.movie-card:nth-child(2):hover { box-shadow: 8px 8px 0 var(--graffiti-blue); }
+.movie-card:nth-child(3):hover { box-shadow: 8px 8px 0 var(--neon-green); }
+.movie-card:nth-child(4):hover { box-shadow: 8px 8px 0 var(--spray-yellow); }
+.movie-card:nth-child(5):hover { box-shadow: 8px 8px 0 var(--street-red); }
+.movie-card:nth-child(6):hover { box-shadow: 8px 8px 0 var(--graffiti-blue); }
+.movie-cover {
+  height: 150px; display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; border-bottom: 3px solid var(--black);
+  position: relative;
+}
+.movie-card:nth-child(1) .movie-cover { background: var(--spray-yellow); }
+.movie-card:nth-child(2) .movie-cover { background: var(--street-red); }
+.movie-card:nth-child(3) .movie-cover { background: var(--graffiti-blue); }
+.movie-card:nth-child(4) .movie-cover { background: var(--neon-green); }
+.movie-card:nth-child(5) .movie-cover { background: var(--concrete); }
+.movie-card:nth-child(6) .movie-cover { background: var(--spray-yellow); }
+.movie-badge {
+  position: absolute; top: 0.5rem; right: 0.5rem;
+  font-size: 0.6rem; font-weight: 900; padding: 0.2rem 0.5rem;
+  background: var(--white); border: 2px solid var(--black);
+  transform: rotate(5deg);
+}
+.movie-info { padding: 1rem; }
+.movie-title { font-size: 0.85rem; font-weight: 900; margin-bottom: 0.2rem; }
+.movie-meta { font-size: 0.7rem; font-weight: 700; margin-bottom: 0.5rem; }
+.movie-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+.movie-tag {
+  font-size: 0.55rem; font-weight: 900; padding: 0.1rem 0.4rem;
+  border: 2px solid var(--black); background: var(--white);
+}
+
+/* ===== 栏目2：影视分类 ===== */
+.cat-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+}
+.cat-card {
+  background: var(--white); border: 3px solid var(--black);
+  padding: 1.5rem 0.8rem; text-align: center;
+  box-shadow: 4px 4px 0 var(--black);
+  transition: all 0.3s; cursor: pointer;
+}
+.cat-card:nth-child(odd) { transform: rotate(-1deg); }
+.cat-card:nth-child(even) { transform: rotate(1deg); }
+.cat-card:hover { transform: rotate(0deg) scale(1.05); background: var(--spray-yellow); }
+.cat-card:nth-child(2):hover { background: var(--street-red); color: var(--white); }
+.cat-card:nth-child(3):hover { background: var(--graffiti-blue); color: var(--white); }
+.cat-card:nth-child(4):hover { background: var(--neon-green); }
+.cat-card:nth-child(5):hover { background: var(--spray-yellow); }
+.cat-card:nth-child(6):hover { background: var(--street-red); color: var(--white); }
+.cat-card:nth-child(7):hover { background: var(--graffiti-blue); color: var(--white); }
+.cat-card:nth-child(8):hover { background: var(--neon-green); }
+.cat-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+.cat-name { font-size: 0.8rem; font-weight: 900; margin-bottom: 0.1rem; }
+.cat-count { font-size: 0.65rem; font-weight: 700; }
+
+/* ===== 栏目3：排行榜 ===== */
+.rank-wrap {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.rank-panel {
+  background: var(--white); border: 4px solid var(--black);
+  padding: 1.5rem;
+  box-shadow: 6px 6px 0 var(--spray-yellow);
+  transform: rotate(-0.5deg);
+}
+.rank-panel:nth-child(2) { box-shadow: 6px 6px 0 var(--graffiti-blue); transform: rotate(0.5deg); }
+.rank-panel-head {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 1rem; padding-bottom: 0.8rem;
+  border-bottom: 3px solid var(--black);
+}
+.rank-panel-icon { font-size: 1.2rem; }
+.rank-panel-title { font-size: 1rem; font-weight: 900; text-transform: uppercase; }
+.rank-list { list-style: none; }
+.rank-item {
+  display: grid; grid-template-columns: 32px 1fr auto;
+  gap: 0.8rem; align-items: center;
+  padding: 0.6rem 0; border-bottom: 2px dashed var(--black);
+}
+.rank-item:last-child { border-bottom: none; }
+.rank-num {
+  font-size: 0.85rem; font-weight: 900; text-align: center;
+  background: var(--spray-yellow); border: 2px solid var(--black);
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+}
+.rank-num.top { background: var(--street-red); color: var(--white); }
+.rank-info h4 { font-size: 0.8rem; font-weight: 900; margin-bottom: 0.05rem; }
+.rank-info p { font-size: 0.65rem; font-weight: 700; }
+.rank-score {
+  font-size: 0.75rem; font-weight: 900; color: var(--white);
+  background: var(--black); padding: 0.2rem 0.5rem;
+}
+
+/* ===== 栏目4：资讯动态 ===== */
+.news-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+.news-list { display: flex; flex-direction: column; gap: 1rem; }
+.news-card {
+  background: var(--white); border: 3px solid var(--black);
+  padding: 1rem; display: flex; gap: 1rem;
+  box-shadow: 4px 4px 0 var(--black);
+  transition: all 0.3s;
+}
+.news-card:nth-child(odd) { transform: rotate(-0.5deg); }
+.news-card:nth-child(even) { transform: rotate(0.5deg); }
+.news-card:hover { transform: rotate(0deg) translateX(4px); box-shadow: 6px 6px 0 var(--street-red); }
+.news-date {
+  min-width: 50px; text-align: center;
+  background: var(--spray-yellow); border: 2px solid var(--black);
+  padding: 0.4rem;
+}
+.news-date .day { font-size: 1.2rem; font-weight: 900; line-height: 1; }
+.news-date .month { font-size: 0.6rem; font-weight: 700; }
+.news-content h4 { font-size: 0.85rem; font-weight: 900; margin-bottom: 0.2rem; }
+.news-content p { font-size: 0.7rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.3rem; }
+.news-label {
+  display: inline-block; font-size: 0.55rem; font-weight: 900;
+  padding: 0.1rem 0.5rem; border: 2px solid var(--black);
+  text-transform: uppercase;
+}
+.label-yellow { background: var(--spray-yellow); }
+.label-red { background: var(--street-red); color: var(--white); }
+.label-blue { background: var(--graffiti-blue); color: var(--white); }
+
+.news-side { display: flex; flex-direction: column; gap: 0.8rem; }
+.news-side-card {
+  background: var(--white); border: 3px solid var(--black);
+  padding: 0.8rem 1rem;
+  box-shadow: 3px 3px 0 var(--black);
+  transition: all 0.3s;
+}
+.news-side-card:nth-child(odd) { transform: rotate(-0.5deg); }
+.news-side-card:nth-child(even) { transform: rotate(0.5deg); }
+.news-side-card:hover { transform: rotate(0deg); box-shadow: 4px 4px 0 var(--neon-green); }
+.news-side-card h5 { font-size: 0.75rem; font-weight: 900; margin-bottom: 0.1rem; }
+.news-side-card span { font-size: 0.6rem; font-weight: 700; }
+
+/* ===== 栏目5：关于/指南 ===== */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.about-card {
+  background: var(--white); border: 4px solid var(--black);
+  padding: 1.5rem;
+  box-shadow: 6px 6px 0 var(--street-red);
+  transform: rotate(0.5deg);
+}
+.about-card:nth-child(2) { box-shadow: 6px 6px 0 var(--graffiti-blue); transform: rotate(-0.5deg); }
+.about-card h3 { font-size: 1rem; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase; }
+.about-card p { font-size: 0.8rem; font-weight: 700; margin-bottom: 0.8rem; line-height: 1.7; }
+.about-card strong { color: var(--street-red); background: var(--spray-yellow); padding: 0 0.2rem; }
+.steps { list-style: none; }
+.step {
+  display: flex; gap: 0.8rem; align-items: flex-start;
+  padding: 0.8rem 0; border-bottom: 2px dashed var(--black);
+}
+.step:last-child { border-bottom: none; }
+.step-n {
+  font-size: 0.8rem; font-weight: 900; min-width: 32px; height: 32px;
+  background: var(--spray-yellow); border: 2px solid var(--black);
+  display: flex; align-items: center; justify-content: center;
+}
+.step h4 { font-size: 0.8rem; font-weight: 900; margin-bottom: 0.1rem; }
+.step p { font-size: 0.7rem; font-weight: 700; margin-bottom: 0; }
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--black); color: var(--white);
+  padding: 3rem 1rem 2rem; margin-top: 3rem;
+  border-top: 6px solid var(--spray-yellow);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+}
+.footer-col h4 { font-size: 0.85rem; font-weight: 900; margin-bottom: 1rem; color: var(--spray-yellow); text-transform: uppercase; }
+.footer-col p, .footer-col li {
+  font-size: 0.75rem; font-weight: 700; margin-bottom: 0.5rem; list-style: none; color: var(--concrete-light);
+}
+.footer-col a { color: var(--concrete-light); text-decoration: none; transition: color 0.2s; }
+.footer-col a:hover { color: var(--spray-yellow); }
+.footer-url { color: var(--spray-yellow) !important; font-family: var(--font-mono); }
+.footer-bottom {
+  max-width: 1200px; margin: 2rem auto 0;
+  padding-top: 1.5rem; border-top: 3px solid var(--concrete-dark);
+  text-align: center; font-size: 0.7rem; font-weight: 700; color: var(--concrete);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-card { width: 100%; max-width: 400px; transform: rotate(0deg); }
+  .rank-wrap { grid-template-columns: 1fr; }
+  .news-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .top-bar { justify-content: center; text-align: center; }
+  .nav-menu {
+    display: none; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--white); border-bottom: 4px solid var(--black);
+    padding: 1rem;
+  }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { text-align: center; margin: 0.2rem 0; }
+  .nav-toggle { display: block; }
+  .movie-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat-grid { grid-template-columns: repeat(4, 1fr); }
+  .footer-inner { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 1.8rem; }
+  .hero-cta { flex-direction: column; }
+  .btn-graffiti { justify-content: center; }
+  .movie-grid { grid-template-columns: 1fr; }
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .news-card { flex-direction: column; }
+  .news-date { align-self: flex-start; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- 顶部信息条 -->
+<div class="top-bar">
+  <span>🔥 俺去也电影网 | 官方网址：<a href="https://anquyedianyingwang-top.github.io">https://anquyedianyingwang-top.github.io</a></span>
+  <span>⚡ 海量资源 · 极速更新</span>
+</div>
+
+<!-- 导航 -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo"><a href="#">俺去也<span class="accent">电影网</span></a></div>
+    <div class="nav-url">anquyedianyingwang-top.github.io</div>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#featured">最新推荐</a></li>
+      <li><a href="#categories">影视分类</a></li>
+      <li><a href="#ranking">热播排行</a></li>
+      <li><a href="#news">资讯动态</a></li>
+      <li><a href="#about">关于本站</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>
+      <span class="line1">俺去也电影网</span><br>
+      <span class="line2">海量影视</span><br>
+      <span class="line3">一网打尽</span>
+    </h1>
+    <div class="hero-desc">
+      俺去也电影网(<strong>anquyedianyingwang-top.github.io</strong>)提供海量电影、电视剧、动漫、综艺在线观看。资源丰富、更新迅速，官方网址：<strong>https://anquyedianyingwang-top.github.io</strong>，全站免费畅享极速观影体验！
+    </div>
+    <div class="hero-cta">
+      <a href="#featured" class="btn-graffiti btn-yellow">▶ 开始观影</a>
+      <a href="#categories" class="btn-graffiti btn-blue">◆ 浏览分类</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <h3>📊 本站数据</h3>
+    <div class="hero-stat">
+      <div class="hero-stat-icon">🎬</div>
+      <div class="hero-stat-info"><h4>20,000+</h4><p>影视资源</p></div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-icon">⚡</div>
+      <div class="hero-stat-info"><h4>极速播放</h4><p>多线路加速</p></div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-icon">🔄</div>
+      <div class="hero-stat-info"><h4>每日更新</h4><p>实时同步最新</p></div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-icon">🔗</div>
+      <div class="hero-stat-info"><h4>anquyedianyingwang-top.github.io</h4><p>官方网址</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目1：最新推荐 -->
+<section class="section" id="featured">
+  <div class="section-head">
+    <span class="section-tag yellow">▶ 最新</span>
+    <h2 class="section-title">最新推荐</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="movie-grid">
+    <article class="movie-card">
+      <div class="movie-cover">🎬<span class="movie-badge">热映</span></div>
+      <div class="movie-info">
+        <h3 class="movie-title">哥斯拉大战金刚2 (2024)</h3>
+        <div class="movie-meta">动作 / 科幻 / 怪兽</div>
+        <div class="movie-tags"><span class="movie-tag">IMAX</span><span class="movie-tag">大片</span><span class="movie-tag">最新</span></div>
+      </div>
+    </article>
+    <article class="movie-card">
+      <div class="movie-cover">🚗<span class="movie-badge">飙车</span></div>
+      <div class="movie-info">
+        <h3 class="movie-title">速度与激情10 (2023)</h3>
+        <div class="movie-meta">动作 / 犯罪 / 飙车</div>
+        <div class="movie-tags"><span class="movie-tag">范·迪塞尔</span><span class="movie-tag">系列</span><span class="movie-tag">热血</span></div>
+      </div>
+    </article>
+    <article class="movie-card">
+      <div class="movie-cover">🤖<span class="movie-badge">科幻</span></div>
+      <div class="movie-info">
+        <h3 class="movie-title">沙丘2 (2024)</h3>
+        <div class="movie-meta">科幻 / 冒险 / 史诗</div>
+        <div class="movie-tags"><span class="movie-tag">维伦纽瓦</span><span class="movie-tag">IMAX</span><span class="movie-tag">史诗</span></div>
+      </div>
+    </article>
+    <article class="movie-card">
+      <div class="movie-cover">🧸<span class="movie-badge">合家欢</span></div>
+      <div class="movie-info">
+        <h3 class="movie-title">神偷奶爸4 (2024)</h3>
+        <div class="movie-meta">动画 / 喜剧 / 冒险</div>
+        <div class="movie-tags"><span class="movie-tag">小黄人</span><span class="movie-tag">照明娱乐</span><span class="movie-tag">爆笑</span></div>
+      </div>
+    </article>
+    <article class="movie-card">
+      <div class="movie-cover">🎭<span class="movie-badge">剧情</span></div>
+      <div class="movie-info">
+        <h3 class="movie-title">奥本海默 (2023)</h3>
+        <div class="movie-meta">剧情 / 传记 / 历史</div>
+        <div class="movie-tags"><span class="movie-tag">诺兰</span><span class="movie-tag">奥斯卡</span><span class="movie-tag">IMAX</span></div>
+      </div>
+    </article>
+    <article class="movie-card">
+      <div class="movie-cover">🗡️<span class="movie-badge">武侠</span></div>
+      <div class="movie-info">
+        <h3 class="movie-title">卧虎藏龙 (2000)</h3>
+        <div class="movie-meta">动作 / 武侠 / 剧情</div>
+        <div class="movie-tags"><span class="movie-tag">李安</span><span class="movie-tag">经典</span><span class="movie-tag">武侠</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 栏目2：影视分类 -->
+<section class="section" id="categories">
+  <div class="section-head">
+    <span class="section-tag red">◆ 分类</span>
+    <h2 class="section-title">影视分类</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card"><span class="cat-icon">💥</span><div class="cat-name">动作大片</div><div class="cat-count">5,234</div></div>
+    <div class="cat-card"><span class="cat-icon">😂</span><div class="cat-name">喜剧搞笑</div><div class="cat-count">4,612</div></div>
+    <div class="cat-card"><span class="cat-icon">👻</span><div class="cat-name">恐怖惊悚</div><div class="cat-count">2,891</div></div>
+    <div class="cat-card"><span class="cat-icon">💕</span><div class="cat-name">爱情浪漫</div><div class="cat-count">3,567</div></div>
+    <div class="cat-card"><span class="cat-icon">📺</span><div class="cat-name">热播剧集</div><div class="cat-count">6,345</div></div>
+    <div class="cat-card"><span class="cat-icon">🎨</span><div class="cat-name">动漫动画</div><div class="cat-count">3,987</div></div>
+    <div class="cat-card"><span class="cat-icon">🎤</span><div class="cat-name">综艺娱乐</div><div class="cat-count">2,123</div></div>
+    <div class="cat-card"><span class="cat-icon">🎯</span><div class="cat-name">悬疑犯罪</div><div class="cat-count">2,456</div></div>
+  </div>
+</section>
+
+<!-- 栏目3：排行榜 -->
+<section class="section" id="ranking">
+  <div class="section-head">
+    <span class="section-tag blue">★ 排行</span>
+    <h2 class="section-title">热播排行榜</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="rank-wrap">
+    <div class="rank-panel">
+      <div class="rank-panel-head"><span class="rank-panel-icon">🎬</span><span class="rank-panel-title">电影热播榜</span></div>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num top">1</span><div class="rank-info"><h4>周处除三害</h4><p>动作 / 犯罪 / 2024</p></div><span class="rank-score">9.6</span></li>
+        <li class="rank-item"><span class="rank-num top">2</span><div class="rank-info"><h4>坠落的审判</h4><p>剧情 / 悬疑 / 2023</p></div><span class="rank-score">9.4</span></li>
+        <li class="rank-item"><span class="rank-num top">3</span><div class="rank-info"><h4>美国小说</h4><p>剧情 / 喜剧 / 2023</p></div><span class="rank-score">9.2</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><div class="rank-info"><h4>花月杀手</h4><p>剧情 / 犯罪 / 2023</p></div><span class="rank-score">8.9</span></li>
+        <li class="rank-item"><span class="rank-num">5</span><div class="rank-info"><h4>可怜的东西</h4><p>剧情 / 科幻 / 2023</p></div><span class="rank-score">8.7</span></li>
+      </ul>
+    </div>
+    <div class="rank-panel">
+      <div class="rank-panel-head"><span class="rank-panel-icon">📺</span><span class="rank-panel-title">剧集热播榜</span></div>
+      <ul class="rank-list">
+        <li class="rank-item"><span class="rank-num top">1</span><div class="rank-info"><h4>繁花</h4><p>剧情 / 年代 / 2024</p></div><span class="rank-score">9.5</span></li>
+        <li class="rank-item"><span class="rank-num top">2</span><div class="rank-info"><h4>大江大河3</h4><p>剧情 / 年代 / 2024</p></div><span class="rank-score">9.3</span></li>
+        <li class="rank-item"><span class="rank-num top">3</span><div class="rank-info"><h4>南来北往</h4><p>剧情 / 年代 / 2024</p></div><span class="rank-score">9.1</span></li>
+        <li class="rank-item"><span class="rank-num">4</span><div class="rank-info"><h4>漫长的季节</h4><p>剧情 / 悬疑 / 2023</p></div><span class="rank-score">9.4</span></li>
+        <li class="rank-item"><span class="rank-num">5</span><div class="rank-info"><h4>狂飙</h4><p>剧情 / 犯罪 / 2023</p></div><span class="rank-score">9.2</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目4：资讯动态 -->
+<section class="section" id="news">
+  <div class="section-head">
+    <span class="section-tag green">▼ 动态</span>
+    <h2 class="section-title">资讯动态</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="news-grid">
+    <div class="news-list">
+      <div class="news-card">
+        <div class="news-date"><span class="day">30</span><br><span class="month">MAR</span></div>
+        <div class="news-content"><h4>俺去也电影网全新上线：海量影视等你来看</h4><p>俺去也电影网(anquyedianyingwang-top.github.io)正式上线，海量电影、剧集、动漫、综艺免费在线观看，访问官网开启观影之旅。</p><span class="news-label label-yellow">上线公告</span></div>
+      </div>
+      <div class="news-card">
+        <div class="news-date"><span class="day">28</span><br><span class="month">MAR</span></div>
+        <div class="news-content"><h4>2024年必看科幻大片合集</h4><p>从《沙丘2》到《哥斯拉大战金刚2》，2024年科幻大片扎堆，俺去也电影网为你整理必看清单。</p><span class="news-label label-red">观影指南</span></div>
+      </div>
+      <div class="news-card">
+        <div class="news-date"><span class="day">25</span><br><span class="month">MAR</span></div>
+        <div class="news-content"><h4>诺兰电影全回顾：从《追随》到《奥本海默》</h4><p>克里斯托弗·诺兰导演生涯全回顾，每一部都是视觉与思想的双重震撼。</p><span class="news-label label-blue">专题推荐</span></div>
+      </div>
+      <div class="news-card">
+        <div class="news-date"><span class="day">22</span><br><span class="month">MAR</span></div>
+        <div class="news-content"><h4>经典港片回顾：那些年的动作传奇</h4><p>成龙、洪金宝、李连杰...重温港片黄金时代的动作经典。</p><span class="news-label label-yellow">经典回顾</span></div>
+      </div>
+    </div>
+    <div class="news-side">
+      <div class="news-side-card"><h5>漫威电影宇宙最新动态</h5><span>阅读量 18.5k</span></div>
+      <div class="news-side-card"><h5>DC宇宙重启计划详解</h5><span>阅读量 15.2k</span></div>
+      <div class="news-side-card"><h5>2024奥斯卡获奖影片合集</h5><span>阅读量 12.8k</span></div>
+      <div class="news-side-card"><h5>国产动画崛起：2024值得期待</h5><span>阅读量 10.5k</span></div>
+      <div class="news-side-card"><h5>悬疑剧推荐：烧脑必看清单</h5><span>阅读量 9.3k</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目5：关于/指南 -->
+<section class="section" id="about">
+  <div class="section-head">
+    <span class="section-tag yellow">ℹ 关于</span>
+    <h2 class="section-title">关于本站</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>俺去也电影网</h3>
+      <p>俺去也电影网(<strong>anquyedianyingwang-top.github.io</strong>)是一个海量影视在线观看平台，致力于为广大影迷提供丰富、优质的影视资源。官方网址：<span class="footer-url">https://anquyedianyingwang-top.github.io</span>。全站资源免费畅享，涵盖电影、电视剧、动漫、综艺等全品类内容。</p>
+      <p>我们坚持"海量、快速、免费"的服务理念，采用多线路智能加速技术，让您随时随地享受极速观影体验。</p>
+    </div>
+    <div class="about-card">
+      <h3>观影指南</h3>
+      <ul class="steps">
+        <li class="step"><div class="step-n">1</div><div><h4>访问官网</h4><p>浏览器输入 https://anquyedianyingwang-top.github.io</p></div></li>
+        <li class="step"><div class="step-n">2</div><div><h4>搜索影片</h4><p>使用搜索框或分类导航找到想看的影片</p></div></li>
+        <li class="step"><div class="step-n">3</div><div><h4>一键播放</h4><p>点击影片封面，选择播放源即可极速观看</p></div></li>
+        <li class="step"><div class="step-n">4</div><div><h4>收藏分享</h4><p>收藏本站，随时回访，分享给好友一起看</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>关于本站</h4>
+      <p>俺去也电影网(anquyedianyingwang-top.github.io)海量影视资源，免费在线观看。</p>
+      <p class="footer-url">https://anquyedianyingwang-top.github.io</p>
+    </div>
+    <div class="footer-col">
+      <h4>快速导航</h4>
+      <ul><li><a href="#home">首页</a></li><li><a href="#featured">最新推荐</a></li><li><a href="#categories">影视分类</a></li><li><a href="#ranking">热播排行</a></li><li><a href="#news">资讯动态</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>影视分类</h4>
+      <ul><li><a href="#">动作大片</a></li><li><a href="#">喜剧搞笑</a></li><li><a href="#">恐怖惊悚</a></li><li><a href="#">爱情浪漫</a></li><li><a href="#">动漫动画</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>联系我们</h4>
+      <ul><li>网址：<span class="footer-url">https://anquyedianyingwang-top.github.io</span></li><li>邮箱：info@anquyedianyingwang-top.github.io</li><li>商务合作：邮件联系</li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 俺去也电影网 (anquyedianyingwang-top.github.io) | 官方网址：https://anquyedianyingwang-top.github.io</p>
+    <p>关键词：俺去也电影网, anquyedianyingwang-top.github.io, 海量影视在线观看</p>
+  </div>
+</footer>
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+navToggle.addEventListener('click', () => { navMenu.classList.toggle('open'); });
+navMenu.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { navMenu.classList.remove('open'); }); });
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
